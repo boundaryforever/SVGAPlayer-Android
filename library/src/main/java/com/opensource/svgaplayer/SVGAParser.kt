@@ -86,7 +86,7 @@ class SVGAParser(context: Context?) {
     var fileDownloader = FileDownloader()
 
     companion object {
-        internal var threadPoolExecutor = Executors.newCachedThreadPool()
+        internal var threadPoolExecutor = Executors.newFixedThreadPool(4)
         fun setThreadPoolExecutor(executor: ThreadPoolExecutor) {
             threadPoolExecutor = executor
         }
